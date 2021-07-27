@@ -26,7 +26,7 @@ import {
   ListRenderItem,
   SafeAreaView
 } from 'react-native';
-import ImageZoom from 'react-native-image-pan-zoom';
+import ImageZoom from 'react-native-image-zoom-fixed';
 import styles from './image-viewer.style';
 import { IImageInfo, IImageSize, Props, State } from './image-viewer.type';
 import { SyntheticEvent } from 'react';
