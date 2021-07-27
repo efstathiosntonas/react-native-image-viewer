@@ -1,16 +1,30 @@
+
+
+
 {
   "compilerOptions": {
-    "declaration": true,
-    "module": "commonjs",
+    "baseUrl": ".",
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
     "strict": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "jsx": "react-native",
-    "lib": ["dom", "es5", "es6", "scripthost"],
-    "target": "es5",
-    "outDir": "built",
-    "sourceMap": true,
-    "skipLibCheck": true
+    "target": "esnext"
   },
   "exclude": ["node_modules", "demo"]
 }

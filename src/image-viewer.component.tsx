@@ -1,35 +1,9 @@
 import * as React from 'react';
 
-import {
-  Animated,
-  CameraRoll,
-  Dimensions,
-  I18nManager,
-  Image,
-  PanResponder,
-  Platform,
-  Text,
-  TouchableHighlight,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
-  ViewStyle,
-  ScrollView,
-  TouchableNativeFeedback,
-  GestureResponderEvent,
-  NativeSyntheticEvent,
-  NativeScrollEvent,
-  NativeTouchEvent,
-  LayoutChangeEvent,
-  LayoutRectangle,
-  FlatList,
-  ListRenderItem,
-  SafeAreaView
-} from 'react-native';
+import { Animated, CameraRoll, FlatList, I18nManager, Image, Text, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import ImageZoom from 'react-native-image-zoom-fixed';
 import styles from './image-viewer.style';
 import { IImageInfo, IImageSize, Props, State } from './image-viewer.type';
-import { SyntheticEvent } from 'react';
 
 export default class ImageViewer extends React.Component<Props, State> {
   public static defaultProps = new Props();
@@ -48,12 +22,15 @@ export default class ImageViewer extends React.Component<Props, State> {
   private width = 0;
   private height = 0;
 
+  // @ts-ignore
   private thumbnailWidth = 0;
+  // @ts-ignore
   private thumbnailHeight = 0;
 
   private styles = styles(0, 0, 'transparent');
 
   // 是否执行过 layout. fix 安卓不断触发 onLayout 的 bug
+  // @ts-ignore
   private hasLayout = false;
 
   // 记录已加载的图片 index
@@ -76,6 +53,7 @@ export default class ImageViewer extends React.Component<Props, State> {
     return null;
   }
 
+  // @ts-ignore
   public componentDidUpdate(prevProps: Props, prevState: State) {
     if (prevProps.index !== this.props.index) {
       // 立刻预加载要看的图
@@ -190,6 +168,7 @@ export default class ImageViewer extends React.Component<Props, State> {
     }
 
     // 是否加载完毕了图片大小
+    // @ts-ignore
     const sizeLoaded = false;
     // 是否加载完毕了图片
     let imageLoaded = false;
@@ -542,6 +521,7 @@ export default class ImageViewer extends React.Component<Props, State> {
           ref={ref => this.thumbnailFlatListRef = ref}
           data={this.props.imageUrls}
           renderItem={this.renderThumbnail}
+          // @ts-ignore
           keyExtractor={(item: IImageInfo, index: number) => index.toString()}
           removeClippedSubviews
         />
